@@ -1,0 +1,12 @@
+{
+  "name": "loop-perf",
+  "version": "1.0.0",
+  "author": "Stephen Kwon <mstorm@mstorm.net>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gcc -o c-perf perf.c; go build -o go-perf perf.go; javac perf.java",
+    "test": "npm run build; N=100000000; ./c-perf $N; ./go-perf $N; java perf $N; node perf.js $N; php perf.php $N; python3 perf.py $N",
+    "clean": "rm c-perf go-perf perf.class"
+  }
+}
+
